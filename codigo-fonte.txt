@@ -1,0 +1,13 @@
+public class teste{
+
+	public double mediaDeInteiros(int a, int b){
+
+		int soma = a + b;
+		double media = soma/2;
+		return media;
+		
+	}
+
+
+
+}
