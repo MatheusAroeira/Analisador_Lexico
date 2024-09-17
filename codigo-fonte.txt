@@ -5,9 +5,6 @@ public class teste{
 		int soma = a + b;
 		double media = soma/2;
 		return media;
-		
 	}
-
-
 
 }
