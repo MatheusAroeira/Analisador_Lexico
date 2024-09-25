@@ -1,10 +1,4 @@
-public class teste{
-
-	public double mediaDeInteiros(int a, int b){
-
-		int soma = a + b;
-		double media = soma/2;
-		return media;
-	}
-
-}
+int a = 4;
+int b = 12.5;
+float media = (a+b)/2;
+println("a media eh: "+media);
