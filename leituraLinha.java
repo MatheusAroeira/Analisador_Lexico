@@ -93,6 +93,7 @@ public class leituraLinha {
                     }
 
                 }
+                lexList.add(lexBuffer.toString());
                 lexList.removeIf(lex -> lex.isBlank() || lex.isEmpty());
             }
             
