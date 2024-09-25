@@ -1,4 +1,3 @@
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
@@ -15,16 +14,11 @@ public class Analisador {
     private Object[] operadores_relacionais = {"<", ">", "<=", ">=", "==", "!=",};
     private Object[] operadores_logicos = {"&&", "||", "!"};
 
-    public Analisador() throws FileNotFoundException {
-        try {
-            leituraLinha leitor = new leituraLinha();
-            lexemas = leitor.getLexemas();
-            tokens = new ArrayList<>();
-            simbolos = new ArrayList<>();
-
-        } catch (FileNotFoundException e) {
-            throw new FileNotFoundException("Arquivo não encontrado");
-        }
+    public Analisador(Object[] lexemas) {
+        leituraLinha leitor = new leituraLinha();
+        this.lexemas = lexemas;
+        tokens = new ArrayList<>();
+        simbolos = new ArrayList<>();
     }
 
     public void analise() throws TokenDesconhecidoException{

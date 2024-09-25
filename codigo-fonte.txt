@@ -1,4 +1,4 @@
 int a = 4;
-int b = 12.5;
+float b = 12.5;
 float media = (a+b)/2;
 println("a media eh: "+media);

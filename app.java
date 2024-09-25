@@ -5,11 +5,12 @@ public class app {
 
     public static void main(String[] args) throws FileNotFoundException, TokenDesconhecidoException {
 
-        Analisador analisador = new Analisador();
         leituraLinha leitor = new leituraLinha();
+        Analisador analisador = new Analisador(leitor.getLexemas());
         analisador.analise();
-        System.out.println(Arrays.toString(analisador.getLista_de_tokens()));
-        System.out.println(Arrays.toString(analisador.getTabela_de_simbolos()));
+
+        System.out.println("Lista de Tokens = " + Arrays.toString(analisador.getLista_de_tokens()));
+        System.out.println("Tabela de Simbolos = " + Arrays.toString(analisador.getTabela_de_simbolos()));
 
     }
 

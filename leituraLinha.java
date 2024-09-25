@@ -78,6 +78,7 @@ public class leituraLinha {
                             lexBuffer.append(c);
                         } while(c != '\"');
                         lexList.add(lexBuffer.toString());
+                        lexBuffer.setLength(0);
                     }else if (c == ' ') {
                         lexList.add(lexBuffer.toString());
                         lexBuffer.setLength(0);
