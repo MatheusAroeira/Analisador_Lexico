@@ -1,0 +1,21 @@
+Relatorio
+
+A implementacao do analisador lexico foi dividido em etapas, tendo duas classes e o a aplicacao;
+Uma das classes,leituraLinha.java, tem o papel de ler o arquivo codigo-fonte.txt, a leitura e feita linha a linha do codigo e em seguida e feito todo o tratamento para separar os lexemas encontrados no codigo-fonte;
+A primeira etapa do processo consiste em remover todas as quebras de linha do codigo, a implementacao foi feita transformando todo meu codigo fonte num arrayList e depois usando o metodo "removeIf(lex->lex.isEmpty()||lex.isBlank())" para remover todos 
+os elementos vazios,lex.isEmpty(), ou que estao em branco,lex.isBlank();
+A segunda etapa do processo e remover as tabulacoes do codigo, a impolementacao consiste em um loop do tipo foreach que percorre todo o meu ArrayList onde estao as linhas do codigo fonte, entao ele analisa o primeiro caracter
+de cada linha e verifica se o caracter e "\t", entao usando um stringBuffer, a nova linha sem a tabulacao e criada, substituindo a linha antiga na lista;
+Na terceira e quarta etapa sao removidos os comentarios, para remover os comentarios em linha eu uso novamente o metodo "removeIf" passando as condicoes de o primeiro e o segundo caracter da linha serem "/",
+a implementacao para remover comentarios em bloco nao esta funcional;
+Finalizando o processo de leitura, o array entao com os comentarios removidos segue para o processo que divide a linha em lexemas, os criterios para separar os lexemas sao espaco em branco e quais quer simbolos especiais.
+Nesse processo e feito a leitura de textos que estao entre aspas, esses nao passam pelo processo de divisao e sao lidos exatamente como estao escritos.
+Resumindo, a classe faz a leitura de todo codigo fonte e retorna uma lista com todos os lexemas encontrados, essa lista sera passada no construtor do analisador, onde os tokens sao formados e armazenados na lista de token, bem
+como os identificadores na tabela de simbolos.
+Na classe do Analisador, primeiro foram definidos atributos que armazenam as palavras reservadas, os simbolos especiais e os operadores, aritmeticos, relacionais e logicos.
+A categorizacao de cada Token e feito usando expressoes regulares que definem um padrao para cada tipo de token implementados em uma sequencia de condicionais, caso haja algum lexema
+em que nao foi possivel categorizar um token para ele, uma excecao e lancada exibindo o token desconhecido.
+Todos os tokens e identificadores sao armazenados nos atributos da lista de tokens e tabela de simbolos e podem ser acessados pelos metodos get de cada um.
+
+
+
